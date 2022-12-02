@@ -1,36 +1,41 @@
 import { readable } from 'svelte/store';
 
 export type Challenge = {
-	name: string;
-	description: string;
-	challengeA: {
-		isComplete: boolean;
-	};
-	challengeB: {
-		isComplete: boolean;
-	};
+	isComplete: boolean;
+	path: string;
 };
 
-export const challenges = readable<Challenge[]>([], (set) => {
+export type DailyChallenge = {
+	name: string;
+	description: string;
+	challengeA: Challenge;
+	challengeB: Challenge;
+};
+
+export const challenges = readable<DailyChallenge[]>([], (set) => {
 	set([
 		{
 			name: 'Calorie Counting',
 			description: 'Elves have to count calories',
 			challengeA: {
-				isComplete: true
+				isComplete: true,
+				path: '/solved/calorie-counting/part-a'
 			},
 			challengeB: {
-				isComplete: true
+				isComplete: true,
+				path: '/solved/calorie-counting/part-b'
 			}
 		},
 		{
 			name: 'Rock, paper, scissors',
 			description: 'Playing rock, paper, scissors between elves',
 			challengeA: {
-				isComplete: true
+				isComplete: true,
+				path: '/solved/rock-paper-scissors/part-a'
 			},
 			challengeB: {
-				isComplete: true
+				isComplete: true,
+				path: '/solved/rock-paper-scissors/part-b'
 			}
 		}
 	]);
