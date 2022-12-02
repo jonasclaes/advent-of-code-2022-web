@@ -24,10 +24,10 @@
 				<p>{challenge.description}</p>
 				<div class="card-actions justify-around">
 					{#if challenge.challengeA.isComplete}
-						<button class="btn btn-secondary">Solution A</button>
+						<a class="btn btn-secondary" href={challenge.challengeA.path}>Solution A</a>
 					{/if}
 					{#if challenge.challengeB.isComplete}
-						<button class="btn btn-secondary">Solution B</button>
+						<a class="btn btn-secondary" href={challenge.challengeA.path}>Solution B</a>
 					{/if}
 				</div>
 			</div>
