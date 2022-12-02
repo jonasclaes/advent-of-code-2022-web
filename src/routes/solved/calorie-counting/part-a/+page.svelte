@@ -17,10 +17,13 @@
 				placeholder="Your input here..."
 				id="input"
 				name="input"
-				value={form?.formData.input ?? ''}
+				value={form?.formData?.input ?? ''}
 			/>
 			<label class="label" for="input">
 				<span class="label-text-alt">Please enter your input here.</span>
+				{#if form?.error?.missing && form?.error?.input !== null}
+					<span class="label-text-alt text-error">Missing input.</span>
+				{/if}
 			</label>
 		</div>
 		<button class="btn">Submit my input!</button>
@@ -36,7 +39,7 @@
 				id="output"
 				name="output"
 				disabled
-				value={form?.data.output ?? ''}
+				value={form?.data?.output ?? ''}
 			/>
 			<label class="label" for="output">
 				<span class="label-text-alt">The output of the program ends up here.</span>
