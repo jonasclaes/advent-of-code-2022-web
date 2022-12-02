@@ -26,7 +26,17 @@ export const actions: Actions = {
 			currentElf.push(parseInt(line));
 		}
 
-		output += `The maximum amount of calories is: ${Math.max(...elves)}\r\n`;
+		let totalMax = 0;
+
+		elves
+			.sort((a, b) => b - a)
+			.some((value, index) => {
+				totalMax += value;
+
+				return index === 2;
+			});
+
+		output += `The maximum amount of calories is: ${totalMax}\r\n`;
 
 		return {
 			success: true,
