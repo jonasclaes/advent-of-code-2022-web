@@ -13,13 +13,13 @@
 </div>
 <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-6 bg-primary">
 	<h2 class="col-span-full text-4xl text-primary-content pb-2 text-center font-bold">Challenges</h2>
-	{#each challenges as challenge, index}
+	{#each $challenges as challenge, index}
 		<div class="card w-full bg-base-100 shadow-xl image-full">
 			<figure><img src="/rubiks-cube.jpg" alt="Rubiks Cube" /></figure>
 			<div class="card-body">
 				<h2 class="card-title">
 					{challenge.name}
-					{#if challenges.length - 1 == index}<div class="badge badge-primary">NEW</div>{/if}
+					{#if $challenges.length - 1 == index}<div class="badge badge-primary">NEW</div>{/if}
 				</h2>
 				<p>{challenge.description}</p>
 				<div class="card-actions justify-around">
