@@ -27,7 +27,7 @@
 						<a class="btn btn-secondary" href={challenge.challengeA.path}>Solution A</a>
 					{/if}
 					{#if challenge.challengeB.isComplete}
-						<a class="btn btn-secondary" href={challenge.challengeA.path}>Solution B</a>
+						<a class="btn btn-secondary" href={challenge.challengeB.path}>Solution B</a>
 					{/if}
 				</div>
 			</div>
