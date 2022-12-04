@@ -21,6 +21,9 @@
 			/>
 			<label class="label" for="input">
 				<span class="label-text-alt">Please enter your input here.</span>
+				{#if form?.error?.missing && form?.error?.input !== null}
+					<span class="label-text-alt text-error">Missing input.</span>
+				{/if}
 			</label>
 		</div>
 		<button class="btn">Submit my input!</button>

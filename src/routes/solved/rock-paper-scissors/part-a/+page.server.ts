@@ -62,7 +62,9 @@ export const actions: Actions = {
 			scores.push(score);
 		}
 
-		const output = `Following the strategy guide, your total score is: ${scores.reduce((acc, cursor) => acc + cursor)}\r\n`;
+		const output = `Following the strategy guide, your total score is: ${scores.reduce(
+			(acc, cursor) => acc + cursor
+		)}\r\n`;
 
 		return {
 			success: true,

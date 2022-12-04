@@ -23,8 +23,12 @@ export const actions: Actions = {
 			const elf2 = elves_group_lines[1];
 			const elf3 = elves_group_lines[2];
 
-			const [common_item] = [...elf1]
-				.filter((value, index) => [...elf1].indexOf(value) === index && [...elf2].includes(value) && [...elf3].includes(value));
+			const [common_item] = [...elf1].filter(
+				(value, index) =>
+					[...elf1].indexOf(value) === index &&
+					[...elf2].includes(value) &&
+					[...elf3].includes(value)
+			);
 
 			score += common_item.match(/[A-Z]/g)
 				? common_item.charCodeAt(0) - 38

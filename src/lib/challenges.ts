@@ -47,7 +47,19 @@ export const challenges = readable<DailyChallenge[]>([], (set) => {
 			},
 			challengeB: {
 				isComplete: true,
-				path: '/solved/rucksack-reorganizationpart-b'
+				path: '/solved/rucksack-reorganization/part-b'
+			}
+		},
+		{
+			name: 'Camp Cleanup',
+			description: 'Elves have to cleanup the camp and not duplicate their work',
+			challengeA: {
+				isComplete: true,
+				path: '/solved/camp-cleanup/part-a'
+			},
+			challengeB: {
+				isComplete: true,
+				path: '/solved/camp-cleanup/part-b'
 			}
 		}
 	]);
