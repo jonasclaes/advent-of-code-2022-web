@@ -19,15 +19,15 @@ export const actions: Actions = {
 			elves_group_lines.push(line);
 			if (elves_group_lines.length != 3) continue;
 
-			const elf1 = elves_group_lines[0];
-			const elf2 = elves_group_lines[1];
-			const elf3 = elves_group_lines[2];
+			const elf1 = [...elves_group_lines[0]];
+			const elf2 = [...elves_group_lines[1]];
+			const elf3 = [...elves_group_lines[2]];
 
-			const [common_item] = [...elf1].filter(
+			const [common_item] = elf1.filter(
 				(value, index) =>
-					[...elf1].indexOf(value) === index &&
-					[...elf2].includes(value) &&
-					[...elf3].includes(value)
+					elf1.indexOf(value) === index &&
+					elf2.includes(value) &&
+					elf3.includes(value)
 			);
 
 			score += common_item.match(/[A-Z]/g)
