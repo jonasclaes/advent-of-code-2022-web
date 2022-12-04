@@ -37,6 +37,18 @@ export const challenges = readable<DailyChallenge[]>([], (set) => {
 				isComplete: true,
 				path: '/solved/rock-paper-scissors/part-b'
 			}
+		},
+		{
+			name: 'Rucksack Reorganization',
+			description: 'Elf has to load rucksacks with supplies',
+			challengeA: {
+				isComplete: true,
+				path: '/solved/rucksack-reorganization/part-a'
+			},
+			challengeB: {
+				isComplete: true,
+				path: '/solved/rucksack-reorganizationpart-b'
+			}
 		}
 	]);
 });
