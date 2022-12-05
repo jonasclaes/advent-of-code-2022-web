@@ -61,6 +61,18 @@ export const challenges = readable<DailyChallenge[]>([], (set) => {
 				isComplete: true,
 				path: '/solved/camp-cleanup/part-b'
 			}
+		},
+		{
+			name: 'Supply Stacks',
+			description: 'Elves have to unload supplies from the ships',
+			challengeA: {
+				isComplete: true,
+				path: '/solved/supply-stacks/part-a'
+			},
+			challengeB: {
+				isComplete: true,
+				path: '/solved/supply-stacks/part-b'
+			}
 		}
 	]);
 });
