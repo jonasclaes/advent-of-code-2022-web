@@ -73,6 +73,18 @@ export const challenges = readable<DailyChallenge[]>([], (set) => {
 				isComplete: true,
 				path: '/solved/supply-stacks/part-b'
 			}
+		},
+		{
+			name: 'Tuning Trouble',
+			description: 'Elves have to detect a marker in a datastream',
+			challengeA: {
+				isComplete: true,
+				path: '/solved/tuning-trouble/part-a'
+			},
+			challengeB: {
+				isComplete: true,
+				path: '/solved/tuning-trouble/part-b'
+			}
 		}
 	]);
 });
