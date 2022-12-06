@@ -9,31 +9,30 @@ export const actions: Actions = {
 		if (!input) return invalid(400, { error: { missing: true, input } });
 
 		const inputData = input.toString().split('\r\n');
-		const cargoList : Array<Array<string>> = [];
+		const cargoList: Array<Array<string>> = [];
 		let rev = false;
 
 		for (const line of inputData) {
 			const lineFormatted = line.trim();
-			const lineChunks = [...line]
+			const lineChunks = [...line];
 
-			if(!lineFormatted.match(/^move/g)) {
+			if (!lineFormatted.match(/^move/g)) {
 				let letter_index = 0;
-				for (let letter = 1; letter < lineChunks.length; letter+=4) {
+				for (let letter = 1; letter < lineChunks.length; letter += 4) {
 					const cursor = lineChunks[letter];
 
-					if( cargoList.length < letter_index + 1) {
+					if (cargoList.length < letter_index + 1) {
 						cargoList.push([]);
 					}
 
-					if(cursor != " " && !cursor.match(/[0-9]/g)) {
+					if (cursor != ' ' && !cursor.match(/[0-9]/g)) {
 						cargoList[letter_index].push(cursor);
 					}
 
 					letter_index += 1;
-					
 				}
 			} else {
-				if(!rev) {
+				if (!rev) {
 					for (let stack = 0; stack < cargoList.length; stack++) {
 						const stackList = cargoList[stack];
 						stackList.reverse();
@@ -41,20 +40,18 @@ export const actions: Actions = {
 					}
 				}
 
-				if(line != " ") {
-					const move_split = Array.from(lineFormatted.matchAll(/\d{1,2}/g),(x) => parseInt(x[0]));
+				if (line != ' ') {
+					const move_split = Array.from(lineFormatted.matchAll(/\d{1,2}/g), (x) => parseInt(x[0]));
 					const [moveAmount, origin, destination] = move_split;
 
 					for (let moveCursor = 0; moveCursor < moveAmount; moveCursor++) {
-
-						cargoList[destination - 1].push(cargoList[origin - 1].pop() || "");
-						
+						cargoList[destination - 1].push(cargoList[origin - 1].pop() || '');
 					}
 				}
 			}
 		}
 
-		const letters = cargoList.map((value) => value.pop()).join("");
+		const letters = cargoList.map((value) => value.pop()).join('');
 
 		const output = `The top of each stack is the following : ${letters}\r\n`;
 

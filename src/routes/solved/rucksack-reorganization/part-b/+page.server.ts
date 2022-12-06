@@ -25,9 +25,7 @@ export const actions: Actions = {
 
 			const [common_item] = elf1.filter(
 				(value, index) =>
-					elf1.indexOf(value) === index &&
-					elf2.includes(value) &&
-					elf3.includes(value)
+					elf1.indexOf(value) === index && elf2.includes(value) && elf3.includes(value)
 			);
 
 			score += common_item.match(/[A-Z]/g)

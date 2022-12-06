@@ -73,6 +73,18 @@ export const challenges = readable<DailyChallenge[]>([], (set) => {
 				isComplete: true,
 				path: '/solved/supply-stacks/part-b'
 			}
+		},
+		{
+			name: 'Tuning Trouble',
+			description: 'You have to fix the communication device',
+			challengeA: {
+				isComplete: true,
+				path: '/solved/tuning-trouble/part-a'
+			},
+			challengeB: {
+				isComplete: true,
+				path: '/solved/tuning-trouble/part-b'
+			}
 		}
 	]);
 });
