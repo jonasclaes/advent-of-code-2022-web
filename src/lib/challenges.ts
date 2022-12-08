@@ -85,6 +85,18 @@ export const challenges = readable<DailyChallenge[]>([], (set) => {
 				isComplete: true,
 				path: '/solved/tuning-trouble/part-b'
 			}
+		},
+		{
+			name: 'No Space Left',
+			description: 'You have to delete some files in order to perform a system update',
+			challengeA: {
+				isComplete: true,
+				path: '/solved/no-space-left/part-a'
+			},
+			challengeB: {
+				isComplete: true,
+				path: '/solved/no-space-left/part-b'
+			}
 		}
 	]);
 });
